@@ -45,22 +45,6 @@
     owconfig:id "endpoints";
     owconfig:config [
       a owconfig:Config;
-      owconfig:id "endpoint-1" ;
-      :icon "" ;
-      rdfs:label "Open Data Europa" ;
-      :address <http://open-data.europa.eu/sparqlep> ;
-      owconfig:config [
-        a owconfig:Config;
-        owconfig:id "models" ;
-        owconfig:config [
-          a owconfig:Config;
-          owconfig:id "model-1" ;
-          :modelUri <http://data.lod2.eu/scoreboard/>
-        ]        
-      ]
-    ] ;
-    owconfig:config [
-      a owconfig:Config;
       owconfig:id "endpoint-2" ;
       :icon "" ;
       rdfs:label "Digital Agenda Data" ;
@@ -73,6 +57,22 @@
           owconfig:id "model-1" ;
           :modelUri <http://semantic.digital-agenda-data.eu/CubeViz>
         ]
+      ]
+    ]
+    owconfig:config [
+      a owconfig:Config;
+      owconfig:id "endpoint-1" ;
+      :icon "" ;
+      rdfs:label "Open Data Europa" ;
+      :address <http://open-data.europa.eu/sparqlep> ;
+      owconfig:config [
+        a owconfig:Config;
+        owconfig:id "models" ;
+        owconfig:config [
+          a owconfig:Config;
+          owconfig:id "model-1" ;
+          :modelUri <http://data.lod2.eu/scoreboard/>
+        ]        
       ]
     ]
   ] ;

@@ -12,8 +12,8 @@
 ;store.virtuoso.use_persistent_connection = true
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-store.backend           = sparql
-;store.sparql.serviceUrl = "http://cubeviz.aksw.org/sparql";
+store.backend            = sparql
+;store.sparql.serviceUrl = "http://digital-agenda-data.eu/data/sparql";
 ;store.sparql.graphs[]   = "http://data.lod2.eu/scoreboard/"
 
 versioning 		= false

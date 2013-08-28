@@ -116,7 +116,7 @@ class IndexController extends OntoWiki_Controller_Base
     public function __call($action, $params)
     {
         OntoWiki::getInstance()->getNavigation()->disableNavigation();
-        $this->view->placeholder('main.window.title')->set('Welcome to OntoWiki');
+        $this->view->placeholder('main.window.title')->set('Welcome to CubeViz');
 
         if ($this->_owApp->hasMessages()) {
             $this->_forward('messages', 'index');
