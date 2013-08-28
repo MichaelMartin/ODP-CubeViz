@@ -58,7 +58,7 @@
           :modelUri <http://semantic.digital-agenda-data.eu/CubeViz>
         ]
       ]
-    ]
+    ];
     owconfig:config [
       a owconfig:Config;
       owconfig:id "endpoint-1" ;
