@@ -16,12 +16,12 @@
   doap:description "provides a model list with create and view menu." ;
   owconfig:authorLabel "AKSW" ;
   doap:maintainer <http://aksw.org> ;
-  owconfig:class "has-contextmenus-block" ;
+  owconfig:templates "public/templates" ;
   owconfig:hasModule :Default .
 :Default a owconfig:Module ;
   rdfs:label "Default" ;
   owconfig:caching "true"^^xsd:boolean ;
-  owconfig:priority "20" ;
+  owconfig:priority "2" ;
   owconfig:context "main.sidewindows" .
 :modellist doap:release :v1-0 .
 :v1-0 a doap:Version ;

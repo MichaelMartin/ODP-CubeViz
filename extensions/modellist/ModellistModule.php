@@ -22,13 +22,11 @@ class ModellistModule extends OntoWiki_Module
 {
     public function init()
     {
-        $this->view->headScript()->appendFile($this->view->moduleUrl . 'modellist.js');
-
         $menuRegistry = OntoWiki_Menu_Registry::getInstance();
         $menuRegistry->getMenu('application')->getSubMenu('View')->setEntry('Hide Knowledge Bases Box', '#');
 
         $this->session          = new Zend_Session_Namespace(_OWSESSION);
-        $this->allGraphUris     = $this->_store->getAvailableModels(true);
+        $this->allGraphUris     = $this->_store->getAvailableModels(false);
         $this->visibleGraphUris = $this->_store->getAvailableModels(false);
 
         if (isset($this->session->showHiddenGraphs) && $this->session->showHiddenGraphs == true) {
@@ -50,37 +48,6 @@ class ModellistModule extends OntoWiki_Module
     }
 
     /**
-     * Returns the menu of the module
-     *
-     * @return string
-     */
-    public function getMenu()
-    {
-        if ($this->_erfurt->getAc()->isActionAllowed('ModelManagement')) {
-            $editMenu = new OntoWiki_Menu();
-            $editMenu->setEntry('Create Knowledge Base', $this->_config->urlBase . 'model/create');
-        }
-
-        $viewMenu = new OntoWiki_Menu();
-        $session  = new Zend_Session_Namespace(_OWSESSION);
-        if (!isset($session->showHiddenGraphs) || $session->showHiddenGraphs == false) {
-            $viewMenu->setEntry('Show Hidden Knowledge Bases', array('class' => 'modellist_hidden_button show'));
-        } else {
-            $viewMenu->setEntry('Hide Hidden Knowledge Bases', array('class' => 'modellist_hidden_button'));
-        }
-
-        // build menu out of sub menus
-        $mainMenu = new OntoWiki_Menu();
-
-        if (isset($editMenu)) {
-            $mainMenu->setEntry('Edit', $editMenu);
-        }
-        $mainMenu->setEntry('View', $viewMenu);
-
-        return $mainMenu;
-    }
-
-    /**
      * Returns the content for the model list.
      */
     public function getContents()
@@ -91,7 +58,7 @@ class ModellistModule extends OntoWiki_Module
         $lang = $this->_config->languages->locale;
 
         $titleHelper = new OntoWiki_Model_TitleHelper();
-        $titleHelper->addResources(array_keys($this->graphUris));
+        #$titleHelper->addResources(array_keys($this->graphUris));
 
         $useGraphUriAsLink = false;
         if (isset($this->_privateConfig->useGraphUriAsLink) && (bool)$this->_privateConfig->useGraphUriAsLink) {
@@ -118,18 +85,39 @@ class ModellistModule extends OntoWiki_Module
             $temp['graphUri'] = $graphUri;
             $temp['selected'] = ($selectedModel == $graphUri ? 'selected' : '');
 
-            // use URI if no title exists
-            $label         = $titleHelper->getTitle($graphUri, $lang);
+            if(!isset($_SESSION[_OWSESSION]['labels']['graph'][$graphUri])) {
+                $titleHelper->addResource($graphUri);
+            }
+            
             $temp['label'] = !empty($label) ? $label : $graphUri;
-
             $temp['backendName'] = $true;
 
-            $models[] = $temp;
+            $models[$graphUri] = $temp;
         }
-
-        $content = $this->render('modellist', $models, 'models');
-
-        return $content;
+        
+        foreach ($models as $graphUri => $graph) {
+            if(!isset($_SESSION[_OWSESSION]['labels']['graph'][$graphUri])) {
+                $label = $titleHelper->getTitle($graphUri, $lang);
+                $_SESSION[_OWSESSION]['labels'][$graphUri] = $label;
+            } else {
+                $label = $_SESSION[_OWSESSION]['labels']['graph'][$graphUri];
+            }
+            $label = !empty($label) ? $label : $graphUri;
+            
+            $models[$graphUri]['label'] = $label;
+        }
+        
+        $this->view->cubevizUrl = $this->_config->urlBase . 'cubeviz/modelinfo/';
+        
+        /**
+         * Add javascript and css file
+         */
+        $basePath = $this->view->basePath = $this->_config->urlBase . 'extensions/modellist/';
+        
+        $this->view->headScript()->appendFile ($basePath .'public/javascript/modellist.js', 'text/javascript');        
+        $this->view->headLink()->appendStylesheet($basePath .'public/css/main.css');
+        
+        return $this->render('modellist', $models, 'models');
     }
 
     public function getStateId()
@@ -150,7 +138,8 @@ class ModellistModule extends OntoWiki_Module
 
     public function getTitle()
     {
-        return "Knowledge Bases";
+        return '<div class="smallHeadline">
+                    &nbsp;Models of selected SPARQL endpoint</div><br/>';
     }
 
 }

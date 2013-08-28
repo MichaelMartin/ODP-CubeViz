@@ -1,0 +1,156 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://localhost/CubeViz/testcubes/catholic/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmls.com/foaf/0.1/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix structure: <http://localhost/CubeViz/testcubes/catholic/structure/> .
+@prefix dimension: <http://localhost/CubeViz/testcubes/catholic/dimension/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<> a owl:Ontology ;
+    rdfs:label "CubeViz TestCube" ;
+    rdfs:comment "This Cube is a trial to address many different possibilites of representing RDF DataCubes. So web envangelism are allowed to call this cube catholic :-)" ;
+    dcterms:date "2013-03-23T11:30:36+0000" .
+
+#######
+# ComponentSpecifications
+#######
+
+structure:cmp-dimA a qb:ComponentSpecification ;
+    rdfs:label "cmp-dimA label without language tag" ;
+    qb:dimension structure:dimA .
+    
+structure:cmp-dimB a qb:ComponentSpecification ;
+    rdfs:label "cmp-dimB label en"@en ;
+    rdfs:label "cmp-dimB label de"@de ;
+    qb:dimension structure:dimB .
+
+structure:cmp-dimC a qb:ComponentSpecification ;
+    rdfs:label "cmp-dimC label en"@en ;
+    rdfs:comment "cmp-dimC comment de"@de ;
+    qb:dimension structure:dimC .
+
+structure:cmp-dimD a qb:ComponentSpecification ;
+    rdfs:comment "cmp-dimD comment - A Component without a label"@de ;
+    qb:dimension structure:dimD .
+
+structure:cmp-dimE a qb:ComponentSpecification ;
+    rdfs:label "cmp-dimE label en"@en ;
+    qb:dimension structure:dimE .
+
+structure:cmp-attrA a qb:ComponentSpecification ;
+    rdfs:label "cmp-attrA label en"@en ;
+    rdfs:label "cmp-attrA label de"@de ;
+    qb:attribute structure:attrA .
+
+structure:cmp-attrB a qb:ComponentSpecification ;
+    rdfs:label "cmp-attrB label en"@en ;
+    qb:attribute structure:attrB .
+
+structure:cmp-measA a qb:ComponentSpecification ;
+    rdfs:label "cmp-measA label en"@en ;
+    rdfs:label "cmp-measA label de"@de ;
+    qb:measure structure:measA .
+
+structure:cmp-measB a qb:ComponentSpecification ;
+    rdfs:label "cmp-measB label en"@en ;
+    qb:measure structure:measB .
+
+#######
+# ComponentProperties
+#######
+
+structure:dimA a qb:DimensionProperty ;
+        rdfs:label "dimA label en"@en ;
+        rdfs:domain qb:Observation ;
+        rdfs:range structure:DimensionA . 
+        
+structure:dimB a qb:DimensionProperty ;
+        rdfs:label "dimB label en"@en ;
+        rdfs:domain qb:Observation ;
+        rdfs:range structure:DimensionB . 
+
+structure:dimC a qb:DimensionProperty ;
+        rdfs:label "dimC label en"@en ;
+        rdfs:comment "Dimension without a domain definition" ;
+        rdfs:range structure:DimensionC . 
+
+structure:dimD a qb:DimensionProperty ;
+        rdfs:label "dimD label en"@en ;
+        rdfs:comment "Dimension without a range definition" ;
+        rdfs:domain qb:Observation . 
+
+structure:dimE a qb:DimensionProperty ;
+        rdfs:comment "Dimension without any further definitions such as domain, range and label" .
+
+structure:attrA a qb:AttributeProperty ;
+        rdfs:label "Attribute Label A" .
+
+structure:attrB a qb:AttributeProperty ;
+        rdfs:label "Attribute Label B" .
+        
+structure:measA a qb:MeasureProperty ;
+        rdfs:label "Measure Label A" .
+
+structure:measB a qb:MeasureProperty ;
+        rdfs:comment "MeasureProperty without Label" .
+
+
+#######
+# DataStructures
+#######
+
+structure:dsdA a qb:DataStructureDefinition ;
+    rdfs:label "DSD defining one Dimension" ;
+    qb:component structure:cmp-dimA ;
+    qb:component structure:cmp-attrA ;
+    qb:component structure:cmp-measA .
+
+structure:dsdB a qb:DataStructureDefinition ;
+    rdfs:label "DSD defining two Dimensions" ;
+    qb:component structure:cmp-dimA ;
+    qb:component structure:cmp-dimB ;    
+    qb:component structure:cmp-attrA ;
+    qb:component structure:cmp-measA .
+
+structure:dsdB-1 a qb:DataStructureDefinition ;
+    rdfs:label "DSD defining two Dimensions, two measure properties and two attribute properties" ;
+    qb:component structure:cmp-dimA ;
+    qb:component structure:cmp-dimB ;    
+    qb:component structure:cmp-attrA ;
+    qb:component structure:cmp-attrB ;    
+    qb:component structure:cmp-measA ;
+    qb:component structure:cmp-measB .    
+
+structure:dsdB-2 a qb:DataStructureDefinition ;
+    rdfs:label "DSD defining two Dimensions but no attribute properties" ;
+    qb:component structure:cmp-dimA ;
+    qb:component structure:cmp-dimB ;    
+    qb:component structure:cmp-measA .
+
+structure:dsdC a qb:DataStructureDefinition ;
+    rdfs:label "DSD defining three Dimensions" ;
+    qb:component structure:cmp-dimA ;
+    qb:component structure:cmp-dimB ;
+    qb:component structure:cmp-dimC ;    
+    qb:component structure:cmp-attrA ;
+    qb:component structure:cmp-measA .
+
+structure:dsdD a qb:DataStructureDefinition ;
+    rdfs:label "DSD defining five Dimensions" ;
+    qb:component structure:cmp-dimA ;
+    qb:component structure:cmp-dimB ;
+    qb:component structure:cmp-dimC ;    
+    qb:component structure:cmp-dimD ;        
+    qb:component structure:cmp-dimE ;            
+    qb:component structure:cmp-attrA ;
+    qb:component structure:cmp-measA .
+
+######
+# Datasets
+######
+

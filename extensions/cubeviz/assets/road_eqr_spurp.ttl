@@ -1,0 +1,656 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://ontologycentral.com/2009/01/eurostat/ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmls.com/foaf/0.1/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix property: <http://eurostat.linked-statistics.org/property#> .
+@prefix component: <http://eurostat.linked-statistics.org/component#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://eurostat.linked-statistics.org/>
+    dcterms:date "2013-01-13T11:30:36+0000" ;
+    foaf:maker <http://harth.org/andreas/foaf#ah> .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp>
+    dcterms:modified "2013-01-13T11:30:36+0000" ;
+    dcterms:source <http://epp.eurostat.ec.europa.eu/NavTree_prod/everybody/BulkDownloadListing?file=data%2Froad_eqr_spurp.tsv.gz> ;
+    qb:structure <http://eurostat.linked-statistics.org/dsd/road_eqr_spurp> ;
+    a qb:DataSet ;
+    rdfs:comment "Reused Eurostat Linked Data Wrapper (http://estatwrap.ontologycentral.com/) to rdfize Eurostat datasets (http://epp.eurostat.ec.europa.eu/) ." ;
+    rdfs:seeAlso <http://epp.eurostat.ec.europa.eu/portal/page/portal/about_eurostat/policies/copyright_licence_policy>, <http://eurostat.linked-statistics.org/> .
+
+<http://eurostat.linked-statistics.org/dsd/road_eqr_spurp>
+    a qb:DataStructureDefinition ;
+    qb:component component:freq ;
+    qb:component component:unit ;
+    qb:component component:geo ;
+    qb:component component:timePeriod ;
+    qb:component component:obsValue .
+
+component:freq 
+    a qb:ComponentSpecification ;
+    qb:attribute sdmx-dimension:freq .
+
+component:unit 
+    a qb:ComponentSpecification ;
+    qb:attribute property:unit .
+
+component:geo
+    a qb:ComponentSpecification ;
+    qb:dimension property:geo .
+
+component:timePeriod
+    a qb:ComponentSpecification ;
+    qb:dimension sdmx-dimension:timePeriod .
+
+component:obsValue
+    a qb:ComponentSpecification ;
+    qb:measure sdmx-measure:obsValue .
+
+sdmx-dimension:freq
+    a qb:AttributeProperty .
+
+property:geo
+    a qb:DimensionProperty .
+    
+property:unit
+    a qb:AttributeProperty .
+
+sdmx-dimension:timePeriod
+    a qb:DimensionProperty .
+
+sdmx-measure:obsValue 
+    a qb:MeasureProperty .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,AT,2008>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#AT> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2008-01-01" ;
+    sdmx-measure:obsValue "2094" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,AT,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#AT> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "1703" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,AT,2010>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#AT> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2010-01-01" ;
+    sdmx-measure:obsValue "1502" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,BE,2008>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#BE> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2008-01-01" ;
+    sdmx-measure:obsValue "3522" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,BE,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#BE> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "2478" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,BE,2010>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#BE> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2010-01-01" ;
+    sdmx-measure:obsValue "2189" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,BE,2011>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#BE> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2011-01-01" ;
+    sdmx-measure:obsValue "2780" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,BG,2008>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#BG> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-attribute:obsStatus <http://eurostat.linked-statistics.org/dic/obs_status#r> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2008-01-01" ;
+    sdmx-measure:obsValue "2797" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,BG,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#BG> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "1768" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,BG,2010>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#BG> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2010-01-01" ;
+    sdmx-measure:obsValue "1437" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,BG,2011>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#BG> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2011-01-01" ;
+    sdmx-measure:obsValue "1282" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,CH,2008>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#CH> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2008-01-01" ;
+    sdmx-measure:obsValue "0" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,CH,2010>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#CH> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2010-01-01" ;
+    sdmx-measure:obsValue "0" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,CH,2011>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#CH> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-attribute:obsStatus <http://eurostat.linked-statistics.org/dic/obs_status#e> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2011-01-01" ;
+    sdmx-measure:obsValue "0" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,CY,2008>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#CY> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-attribute:obsStatus <http://eurostat.linked-statistics.org/dic/obs_status#r> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2008-01-01" ;
+    sdmx-measure:obsValue "632" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,CY,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#CY> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "482" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,CY,2010>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#CY> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2010-01-01" ;
+    sdmx-measure:obsValue "391" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,CY,2011>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#CY> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2011-01-01" ;
+    sdmx-measure:obsValue "302" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,CZ,2008>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#CZ> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2008-01-01" ;
+    sdmx-measure:obsValue "173" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,CZ,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#CZ> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "114" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,CZ,2010>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#CZ> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2010-01-01" ;
+    sdmx-measure:obsValue "119" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,DE,2008>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#DE> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2008-01-01" ;
+    sdmx-measure:obsValue "15039" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,DE,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#DE> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "12398" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,DE,2010>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#DE> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2010-01-01" ;
+    sdmx-measure:obsValue "12613" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,DE,2011>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#DE> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2011-01-01" ;
+    sdmx-measure:obsValue "14028" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,EE,2008>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#EE> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-attribute:obsStatus <http://eurostat.linked-statistics.org/dic/obs_status#r> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2008-01-01" ;
+    sdmx-measure:obsValue "500" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,FI,2008>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#FI> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2008-01-01" ;
+    sdmx-measure:obsValue "2529" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,FI,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#FI> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "1391" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,FI,2010>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#FI> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2010-01-01" ;
+    sdmx-measure:obsValue "1698" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,FI,2011>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#FI> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2011-01-01" ;
+    sdmx-measure:obsValue "2273" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,HR,2008>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#HR> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2008-01-01" ;
+    sdmx-measure:obsValue "1176" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,HR,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#HR> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "695" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,HR,2010>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#HR> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2010-01-01" ;
+    sdmx-measure:obsValue "433" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,HU,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#HU> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "290" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,IT,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#IT> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "26250" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,IT,2010>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#IT> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2010-01-01" ;
+    sdmx-measure:obsValue "24586" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,IT,2011>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#IT> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2011-01-01" ;
+    sdmx-measure:obsValue "22692" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,LT,2008>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#LT> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2008-01-01" ;
+    sdmx-measure:obsValue "1362" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,LT,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#LT> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "658" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,LT,2010>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#LT> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2010-01-01" ;
+    sdmx-measure:obsValue "705" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,LT,2011>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#LT> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2011-01-01" ;
+    sdmx-measure:obsValue "889" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,LV,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#LV> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "179" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,LV,2010>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#LV> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2010-01-01" ;
+    sdmx-measure:obsValue "141" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,LV,2011>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#LV> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2011-01-01" ;
+    sdmx-measure:obsValue "284" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,MK,2008>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#MK> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2008-01-01" ;
+    sdmx-measure:obsValue "1870" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,MK,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#MK> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "1838" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,MT,2008>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#MT> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2008-01-01" ;
+    sdmx-measure:obsValue "247" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,MT,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#MT> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "243" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,PL,2008>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#PL> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2008-01-01" ;
+    sdmx-measure:obsValue "6641" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,PL,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#PL> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "5662" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,PL,2010>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#PL> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2010-01-01" ;
+    sdmx-measure:obsValue "6147" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,PL,2011>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#PL> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2011-01-01" ;
+    sdmx-measure:obsValue "7328" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,PT,2010>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#PT> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2010-01-01" ;
+    sdmx-measure:obsValue "1278" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,PT,2011>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#PT> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2011-01-01" ;
+    sdmx-measure:obsValue "929" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,RO,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#RO> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "1758" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,RO,2010>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#RO> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2010-01-01" ;
+    sdmx-measure:obsValue "1986" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,SE,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#SE> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "4564" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,SI,2008>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#SI> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2008-01-01" ;
+    sdmx-measure:obsValue "1092" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,SI,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#SI> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "782" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,SI,2010>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#SI> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2010-01-01" ;
+    sdmx-measure:obsValue "615" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,SI,2011>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#SI> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2011-01-01" ;
+    sdmx-measure:obsValue "559" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,TR,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#TR> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "1449" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,UK,2008>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#UK> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2008-01-01" ;
+    sdmx-measure:obsValue "333" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,UK,2009>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#UK> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2009-01-01" ;
+    sdmx-measure:obsValue "352" ;
+    a qb:Observation .
+
+<http://eurostat.linked-statistics.org/data/road_eqr_spurp#A,NBR,UK,2010>
+    property:geo <http://eurostat.linked-statistics.org/dic/geo#UK> ;
+    property:unit <http://eurostat.linked-statistics.org/dic/unit#NBR> ;
+    qb:dataSet <http://eurostat.linked-statistics.org/data/road_eqr_spurp> ;
+    sdmx-dimension:freq <http://purl.org/linked-data/sdmx/2009/code#freq-A> ;
+    sdmx-dimension:timePeriod "2010-01-01" ;
+    sdmx-measure:obsValue "272" ;
+    a qb:Observation .
+

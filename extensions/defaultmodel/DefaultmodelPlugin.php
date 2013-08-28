@@ -57,7 +57,7 @@ class DefaultmodelPlugin extends OntoWiki_Plugin
         }
 
         // set default model if it could be determined
-        if ($modelUri && !$efApp->getAc()->isActionAllowed($config['modelsExclusiveRight'])) {
+        if ($modelUri) {
 
             if (!($owApp->selectedModel && ($modelUri == $owApp->selectedModel->getModelUri()))) {
                 $owApp->selectedModel = $efStore->getModel($modelUri);

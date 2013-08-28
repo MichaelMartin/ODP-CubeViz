@@ -6,7 +6,6 @@
 # OntoWiki muck
 *.log
 application/tests/cache
-/cache
 /uploads
 /libraries/Zend
 /logs
